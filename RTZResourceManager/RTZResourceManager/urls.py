@@ -20,5 +20,6 @@ from RTZResourceManagerApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('RTZResourceManagerApp.urls')),
-    path('accounts/',include('accounts.urls'))
+    path('accounts/',include('accounts.urls')),
+    path('employeemanagement/',include('EmployeeManagementApp.urls'))
 ]

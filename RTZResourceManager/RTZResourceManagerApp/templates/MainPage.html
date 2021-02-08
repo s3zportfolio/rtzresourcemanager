@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>RTZ Resource Manager</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  </head>
-  <body>
-    <br><br><br><br>
-    <div class="jumbotron" align="center">
+{% extends 'base.html' %}
 
-      <p class="lead">Main Menu.</p>
-      <br><br><br><br><br><br><br><br>
-    </div>
-    <!--<a href="{% url 'homepage' %}">HomePage</a>-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-  </body>
-</html>
+{% block body %}
+
+<div class="jumbotron" align="center">
+
+  <p class="lead">Welcome, {{user.username}}.</p>
+    <br><br><br><br><br><br><br><br>
+
+
+</div>
+<h5</h5>
+{%endblock%}

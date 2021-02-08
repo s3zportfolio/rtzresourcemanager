@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container-fluid">
+<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+     <ul class="navbar-nav">
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Employee Management
+         </a>
+         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+           <li><a class="dropdown-item" href="{% url 'employeedetails'%}">Employee Details</a></li>
+           <li><a class="dropdown-item" href="#">Employee Benefits</a></li>
+         </ul>
+       </li>
+     </ul>
+     <ul class="navbar-nav">
+       <li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Time Management
+         </a>
+         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+           <li><a class="dropdown-item" href="#">TimeSheet Entry</a></li>
+           <li><a class="dropdown-item" href="#">Holiday Application</a></li>
+         </ul>
+       </li>
+     </ul>
+   </div>
+   {% if user.is_authenticated %}
+     <li class="nav-item">
+       <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+     </li>
+   {% endif%}
+</div>
+</nav>

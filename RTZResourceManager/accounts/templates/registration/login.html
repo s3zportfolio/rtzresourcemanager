@@ -1,15 +1,46 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Login</title>
-    <form  method="post">
+{% extends 'mainbase.html' %}
+
+{%block content%}
+  <title>Login</title>
+    <!--<form  method="post">
       {% csrf_token %}
       {{form.as_p}}
-      <button>Login</button>
-    </form>
-  </head>
-  <body>
-
-  </body>
-</html>
+      <button class="btn btn-success">Login</button>
+    </form>-->
+    <div class="container">
+    <div class="row">
+        <br>
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            {% if form.errors %}
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Enter username" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+    </div>
+      {% endblock%}

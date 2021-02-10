@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('RTZResourceManagerApp.urls')),
     path('accounts/',include('accounts.urls')),
-    path('employeemanagement/',include('EmployeeManagementApp.urls'))
+    path('employeemanagement/',include('EmployeeManagementApp.urls')),
+    path('administration/',include('AdministrationApp.urls'))
 ]

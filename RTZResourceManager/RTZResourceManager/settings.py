@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'RTZResourceManagerApp',
     'accounts',
     'EmployeeManagementApp',
+    'AdministrationApp',
 ]
 
 MIDDLEWARE = [

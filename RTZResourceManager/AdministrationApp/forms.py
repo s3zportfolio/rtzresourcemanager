@@ -5,4 +5,4 @@ from .models import EmployeeType
 class EmpTypeForm(forms.ModelForm):
     class Meta:
         model=EmployeeType
-        fields =('EmpTypeCode','EmployeeType')
+        fields ='__all__'

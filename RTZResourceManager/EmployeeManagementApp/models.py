@@ -1,15 +1,8 @@
 from django.db import models
+from AdministrationApp.models import EmployeeType, EmployeeRole, SalaryType
 
 # Create your models here.
-class EmployeeType(models.Model):
-    EmpTypeCode=models.CharField(primary_key=True,max_length=1)
-    EmpType=models.CharField(max_length=30)
-class EmployeeRole(models.Model):
-    EmpRoleCode=models.CharField(primary_key=True,max_length=1)
-    EmpRole=models.CharField(max_length=30)
-class SalaryType(models.Model):
-    SalaryCode=models.CharField(primary_key=True,max_length=1)
-    SalType=models.CharField(max_length=30)
+
 class EmployeeInformation(models.Model):
     EmpId=models.IntegerField(primary_key=True)
     First_Name=models.CharField(max_length=45)

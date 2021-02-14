@@ -7,10 +7,13 @@ def home(request):
 def employeelist(request):
     return render(request,'empList.html')
 def employeetype(request):
-    context={}
-    form=EmpTypeForm(request.POST or None, request.FILES or None)
-    if form.is_valid():
-        form.save()
-    context['form']=form
-    return render(request,'empType.html',context)
+    if request.method=='POST':
+        form=EmpTypeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('empType.html')
+    else:
+            form=EmpTypeForm()
+    return render(request,'empType.html',{'form':form})
+
 # Create your views here.

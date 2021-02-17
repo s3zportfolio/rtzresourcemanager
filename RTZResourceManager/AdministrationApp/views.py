@@ -23,3 +23,14 @@ def employeetype(request):
         'form':form,
       'allEmpTypes':allEmpTypes
       })
+def editemployeetype(request, etypecode):
+    employeetype=EmployeeType.objects.get(EmpTypeCode=etypecode)
+    form=EmpTypeForm(request.POST,instance=EmployeeType)
+    if form.is_valid():
+        form.save()
+        form=EmpTypeForm()
+    allEmpTypes=EmployeeType.objects.all()
+    return render(request,'empType.html',{
+        'form':form,
+      'allEmpTypes':allEmpTypes
+      })

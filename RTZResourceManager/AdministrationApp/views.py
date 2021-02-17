@@ -15,7 +15,7 @@ def employeetype(request):
             #return redirect('empType.html')
     else:
             form=EmpTypeForm()
-    return render(request,'empType.html',{'form':form})
+    #return render(request,'empType.html',{'form':form})
     allEmpTypes=EmployeeType.objects.all()
     return render(request,'empType.html',{
       'allEmpTypes':allEmpTypes,

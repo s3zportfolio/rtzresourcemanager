@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-from django.shortcuts import render,redirect,HttpResponseRedirect
-=======
 from django.shortcuts import render,redirect
->>>>>>> ebed649da7331c595821be34f065f19cbfa64872
 from .forms import EmpTypeForm
 from .models import EmployeeType
 
@@ -17,7 +13,6 @@ def employeetype(request):
         if form.is_valid():
             form.save()
             form=EmpTypeForm()
-<<<<<<< HEAD
 
             #return redirect('empType.html')
     else:
@@ -28,15 +23,3 @@ def employeetype(request):
         'form':form,
       'allEmpTypes':allEmpTypes
       })
-=======
-    #return render(request,'empType.html',{'form':form})
-    allEmpTypes=EmployeeType.objects.all()
-    return render(request,'empType.html',{
-      'allEmpTypes':allEmpTypes,
-      'form':form,
-      })
-#def ListEmployeeType(request):
-#    allEmpTypes=EmployeeType.objects.all()
-#    return render(request,'empType.html',{'allEmpTypes':allEmpTypes})
-# Create your views here.
->>>>>>> ebed649da7331c595821be34f065f19cbfa64872

@@ -7,4 +7,5 @@ urlpatterns = [
     path('administration/EmpList',views.employeelist,name='employeelist'),
     path('administration/EmpType',views.employeetype,name='employeetype')
 
+
 ]

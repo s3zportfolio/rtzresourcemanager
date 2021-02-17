@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .forms import EmpTypeForm
+from .models import EmployeeType
 
 # Create your views here.
 def home(request):
@@ -11,9 +12,12 @@ def employeetype(request):
         form=EmpTypeForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('empType.html')
+            #return redirect('empType.html')
     else:
             form=EmpTypeForm()
     return render(request,'empType.html',{'form':form})
-
-# Create your views here.
+    allEmpTypes=EmployeeType.objects.all()
+    return render(request,'empType.html',{
+      'allEmpTypes':allEmpTypes,
+      'form':form,
+      })
